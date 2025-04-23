@@ -7,14 +7,10 @@ from tkinter import *
 # Load vocab
 try:
     file = pd.read_csv("vocab_to_learn.csv")
-    french = [items for items in file["French"]]
-    english = [items for items in file["English"]]
-    print("using vocab to learn")
 except FileNotFoundError:
     file = pd.read_csv("Data/french_words.csv")
-    french = [items for items in file["French"]]
-    english = [items for items in file["English"]]
-    print("using french word")
+french = [items for items in file["French"]]
+english = [items for items in file["English"]]
 
 # Combine into vocab list
 vocab = list(zip(french, english))
